@@ -23,6 +23,10 @@ class CardioInput(BaseModel):
     smoke: int
     active: int
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI!"}
 # Predict route
 @app.post("/predict")
 def predict(input_data: CardioInput):
